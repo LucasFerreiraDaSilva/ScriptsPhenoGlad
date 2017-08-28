@@ -1,6 +1,12 @@
 # Script para realização do zoneamento para a cultura do gladíolo #
+## Instruções para download do repositório: ##
+1. Abrir Terminal Linux.
+2. Entrar na pasta que se deseja ter o script. Para entrar na pasta "Documentos" basta executar o comando: `cd Documentos`
+3. Para fazer o download do repositório basta executar o comando: `git clone https://github.com/LucasFerreiraDaSilva/ScriptsPhenoGlad.git`
+4. Para acessar o script basta entrar na pasta do repositório com o comando: `cd ScriptZoneamento`
+5. Para executar o script basta seguir as instruções abaixo.
 
-## Instruções: ##
+## Instruções para execução: ##
 1. A pasta "*meteorologicFiles*" deve conter os arquivos meteorológicos de cada região que se deseja incluir no zoneamento (os arquivos meteorológicos devem ter nomes DISTINTOS e sem espaços).
 2. Os resultados estão todos na pasta "resultados" (criada automaticamente).
 3. Dentro da pasta "*resultados*" estão as pastas contendo os resultados da simulação para todas as regiões dos arquivos meteorológicos, separadas por seus respectivos nomes.
