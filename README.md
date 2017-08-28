@@ -3,12 +3,15 @@
 1. Abrir o Terminal do Linux.
 
 2. Entrar na pasta que se deseja ter o script. Para entrar na pasta "Documentos" basta executar o comando:
+
 `cd Documentos`
 
 3. Para fazer o download do repositório basta executar o comando:
+
  `git clone https://github.com/LucasFerreiraDaSilva/ScriptsPhenoGlad.git`
 
 4. Para acessar o script basta entrar na pasta do repositório com o comando:
+
  `cd ScriptZoneamento`
 
 5. Para executar o script basta seguir as instruções abaixo.
