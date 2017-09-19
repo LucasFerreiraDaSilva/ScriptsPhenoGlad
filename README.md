@@ -1,4 +1,7 @@
 # Script para realização do zoneamento para a cultura do gladíolo #
+Script desenvolvido com a linguagem de programação Python, versão 3, para a realização da automação das diversas rodadas do modelo PhenoGlad necessárias para a coleta dos dados de cada região para realização do zoneamento de Gladíolo.
+O presente script foi desenvolvido de modo a se obter um desempenho melhorado com relação aos demais scripts de automação do modelo, pois utiliza técnicas de programação paralela para o melhor aproveitamento dos recursos computacionais da máquina onde o mesmo será executado. Quanto mais "*cores*" de processamento houverem, mais rápido o script será executado.
+
 ## Instruções para download do repositório: ##
 1. Abrir o Terminal do Linux.
 
