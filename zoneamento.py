@@ -56,8 +56,8 @@ def phenogladAlert(table, data, column):
             c+=1
         else:
             c=0
-    if ((c > 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.0)):
-        return ";3"
+        if ((c > 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.0)):
+            return ";3"
 
     # Spike dead by frost = 2
     c = 0
@@ -71,8 +71,8 @@ def phenogladAlert(table, data, column):
         if ((float(l[tmin-1]) <= -2.0) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.64)):
             return ";2"
 
-    if ((c > 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.64)):
-        return ";2"
+        if ((c > 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.64)):
+            return ";2"
 
     # Risk of severe burning of  florets = 1
     c = 0
@@ -81,8 +81,8 @@ def phenogladAlert(table, data, column):
             c+=1
         else:
             c=0
-    if ((c >= 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.8) and (float(l[dvs-1]) <= 1.05)):
-        return ";1"
+        if ((c >= 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 0.8) and (float(l[dvs-1]) <= 1.05)):
+            return ";1"
 
     c = 0
     for l in table[1:]:
@@ -90,8 +90,8 @@ def phenogladAlert(table, data, column):
             c+=1
         else:
             c=0
-    if ((c >= 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 1.05) and (float(l[dvs-1]) <= 2.9)):
-        return ";1"
+        if ((c >= 3) and (float(l[column-1]) <= data) and (float(l[dvs-1]) >= 1.05) and (float(l[dvs-1]) <= 2.9)):
+            return ";1"
 
     # Crop killed by heat. = 4
     c = 0
@@ -217,7 +217,7 @@ def countAlerts(locals):
 
 
 def runAutomation():
-    locals = list(d.strip('.txt') for d in os.listdir('meteorologicFiles'))
+    locals = list(d[:-4] for d in os.listdir('meteorologicFiles'))
     os.makedirs('resultados', exist_ok=True)
     scriptHome = os.getcwd()
     pathLocals = []
