@@ -46,3 +46,26 @@ Argumento | Descrição                | Valor do exemplo acima
  OBS.: Para habilitar a emergência basta adicionar o argumento **-e** na execução do script, conforme o exemplo abaixo:
 
  `python3 zoneamento.py -ai 1961 -af 2015 -di 1 -df 365 -t 1 -c 1 -v 7 -r 1 -d 1.0 -e`
+
+# Script para a busca de valores nos resultados das simulações #
+Este script ("*filter.py*") faz o trabalho de buscar as ocorrências de determinado valor dentre os resultados das simulações. Caso o valor informado por parâmetro pelo usuário não for encontrado, busca-se o valor imediatamente anterior, como por exemplo, se o usuário informar para a busca o valor 303 para ser encontrado e o mesmo não tiver nenhuma ocorrência no ano da simulação, então será utilizado um valor imediatamente menor que 303 que exista na simulação, como o 302.
+
+O script retorna como saída tanto o arquivo contendo os dias de ocorrência em cada ano do valor buscado, como também um arquivo contendo o valor médio dos dias que foram encontrados o valor buscado.
+
+**IMPORTANTE:** Esse script efetua a busca do valor informado sobre os resultados de simulações anteriores, portanto, caso a pasta "*resultados*" contendo as simulações não for encontrada, o script não funcionará.  
+
+## Instruções para execução: ##
+
+1. Para executar o script basta estar na pasta que o mesmo se encontra;
+2. Os resultados da busca estarão todos na pasta "busca", criada automaticamente;
+3. O arquivo contendo os anos de simulação e os dias que o valor buscado foi encontrado, bem como o arquivo com as médias das ocorrências, se encontra dentro da pasta "*busca*" na pasta contendo o nome da respectiva localidade a qual o script efetuou a procura;
+
+### Exemplo de execução do script em um terminal Linux: ###
+`python3 filter.py -a 1961 -v 303`
+
+A explicação de cada argumento pode ser visualizada na tabela abaixo:
+
+Argumento | Descrição                | Valor do exemplo acima
+--------- | ------------------------ | ------------------------
+ **-a**  | Ano inicial dos arquivos resultantes das simulações | ano de 1961
+ **-v**  | Valor a ser buscado   | busca-se o valor 303
