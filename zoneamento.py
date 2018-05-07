@@ -185,7 +185,7 @@ def countAlerts(locals):
             for row in csv.reader(filtered, dialect="excel-tab"):
                 years.append(row)
         finalCont = {}
-        for day in range(365):
+        for day in range((int(diaFinal) - int(diaInicial))+1):
             sum_1 = sum_2 = sum_3 = sum_4 = 0
             for year in years:
                 if (';' in year[day]):
@@ -204,16 +204,15 @@ def countAlerts(locals):
             contDay.append(sum_2)
             contDay.append(sum_3)
             contDay.append(sum_4)
-
-            finalCont[str(day+1)] = contDay
+            finalCont[str(day+int(diaInicial))] = contDay
 
         with open("resultados/"+str(local)+"/alertas.txt", 'w') as f:
             writer = csv.writer(f, dialect="excel-tab")
             writer.writerow(["Dia", "Alerta 1", "Alerta 2", "Alerta 3", "Alerta 4"])
 
-            for d in range(365):
-                finalCont[str(d+1)].insert(0,(d+1))
-                writer.writerow(finalCont[str(d+1)])
+            for d in range((int(diaFinal) - int(diaInicial))+1):
+                finalCont[str(d+int(diaInicial))].insert(0,(d+int(diaInicial)))
+                writer.writerow(finalCont[str(d+int(diaInicial))])
 
 
 def runAutomation():
